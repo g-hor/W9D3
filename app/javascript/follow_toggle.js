@@ -9,20 +9,26 @@ export default class FollowToggle {
 
   async handleClick(event) {
     event.preventDefault();
-    console.log(this.followState);
+    this.followState === "followed" ? this.unfollow() : this.follow();
   }
 
   async follow() {
-    // Your code here
+    // this.followState = "followed";
+    this.followState("followed");
   }
 
   async unfollow() {
-    // Your code here
+    // this.followState = "unfollowed";
+    this.followState("unfollowed");
   }
 
   render() {
     switch (this.followState) {
-      // Your code here
+      case this.followState() === "followed": 
+        this.toggleButton.innerText = "Unfollow!";
+        break;
+      case this.followState() === "unfollowed":
+        this.toggleButton.innerText = "Follow!";
     }
   }
 
