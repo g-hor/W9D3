@@ -2,11 +2,14 @@ import { API, broadcast } from "./util";
 
 export default class FollowToggle {
   constructor(toggleButton) {
-    // Your code here
+    this.toggleButton = toggleButton;
+    this.handleClick = this.handleClick.bind(this);
+    this.toggleButton.addEventListener("click", this.handleClick);
   }
 
   async handleClick(event) {
-    // Your code here
+    event.preventDefault();
+    console.log(this.followState);
   }
 
   async follow() {
